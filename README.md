@@ -5,12 +5,14 @@
 
 ## USB to Serial Connect
 
+```text
 Красный провод: 5 В
 Черный провод: GND
 Белый провод: RXD
 Зеленый провод: TXD
 Желтый провод: RTS
 Синий провод: CTS
+```
 
 ## PINS GPIO
 
@@ -71,12 +73,15 @@ wifi password: configesp
 ### Use
 
 [http://192.168.1.20/control?cmd=GPIO,12,1](http://192.168.1.20/control?cmd=GPIO,12,1)
+
 [http://192.168.1.20/control?cmd=GPIO,13,1](http://192.168.1.20/control?cmd=GPIO,13,1)
 
 [http://192.168.1.20/control?cmd=GPIO,12,0](http://192.168.1.20/control?cmd=GPIO,12,0)
+
 [http://192.168.1.20/control?cmd=GPIO,13,0](http://192.168.1.20/control?cmd=GPIO,13,0)
 
 [http://192.168.1.20/control?cmd=Status,GPIO,12](http://192.168.1.20/control?cmd=Status,GPIO,12)
+
 [http://192.168.1.20/control?cmd=Status,GPIO,13](http://192.168.1.20/control?cmd=Status,GPIO,13)
 
 ### Documentation
