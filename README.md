@@ -14,6 +14,7 @@
 
 ## PINS GPIO
 
+```text
 13 - 1 Relay
 12 - 2 Relay
 
@@ -22,6 +23,7 @@
 
 14 - DHT
 16 - Red led (USB Status)
+```
 
 ## ESPEasy
 
