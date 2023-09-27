@@ -31,15 +31,23 @@
 
 ### Install 1M
 
+First install Python and esptool.py
+
 ```bash
-/Library/Frameworks/Python.framework/Versions/3.11/bin/esptool.py \
+pip install esptool
+```
+
+
+
+```bash
+esptool.py \
 --chip esp8266 \
 --baud 115200 \
 --port /dev/cu.usbserial-A601NK9P \
 write_flash -fs 1MB 0x00000 \
 ./blank_1MB.bin
 
-/Library/Frameworks/Python.framework/Versions/3.11/bin/esptool.py \
+esptool.py \
 --chip esp8266 \
 --baud 115200 \
 --port /dev/cu.usbserial-A601NK9P \
@@ -50,14 +58,14 @@ write_flash -fs 1MB 0x00000 \
 ### Install 4M1M
 
 ```bash
-/Library/Frameworks/Python.framework/Versions/3.11/bin/esptool.py \
+esptool.py \
 --chip esp8266 \
 --baud 115200 \
 --port /dev/cu.usbserial-A601NK9P \
 write_flash -fs 4MB 0x00000 \
 ./blank_4MB.bin
 
-/Library/Frameworks/Python.framework/Versions/3.11/bin/esptool.py \
+esptool.py \
 --chip esp8266 \
 --baud 115200 \
 --port /dev/cu.usbserial-A601NK9P \
