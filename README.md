@@ -67,8 +67,10 @@ write_flash -fs 4MB 0x00000 \
 
 ### First Connect
 
+```text
 http://192.168.4.1/
 wifi password: configesp
+```
 
 ### Use
 
