@@ -89,3 +89,114 @@ wifi password: configesp
 ### Documentation
 
 [https://www.letscontrolit.com/wiki/index.php/ESPEasy_Command_Reference](https://www.letscontrolit.com/wiki/index.php/ESPEasy_Command_Reference)
+
+### Settings
+
+#### Tools -> Advanced Settings
+
+- Rules: True
+- Enable Rules Cache: True
+- Use NTP: True
+- NTP Hostname: ntp0.ntp-servers.net
+- Timezone Offset: 180
+- JSON bool output without quotes: True
+
+#### Rules
+
+```text
+//Изменение состояния реле 1 переключателем 1
+on Button1#State do
+  If [Button1#State]=1
+    if [Relay1#State]=0
+      gpio,13,1
+    Else
+      gpio,13,0
+    Endif
+  Endif
+endon
+
+//Изменение состояния реле 2 переключателем 2
+on Button2#State do
+  If [Button2#State]=1
+    if [Relay2#State]=0
+      gpio,12,1
+    Else
+      gpio,12,0
+    Endif
+  Endif
+endon
+```
+
+#### Controllers
+
+- Protocol: Home Assistant (openHAB) MQTT
+- Locate Controller: {MQTT_HOST}
+- Controller Port: {MQTT_PORT}
+- Use Extended Credentials: True
+- Controller User: {MQTT_USER}
+- Controller Password: {MQTT_PASSWORD}
+- Publish Retain Flag: True
+- Enabled: True
+
+#### Devices
+
+- DHT11/12/22 SONOFF2301/7021/MS01
+  - Name: DHT
+  - Enabled: True
+  - GPIO: GPIO-14 (D5)
+  - Sensor model: DHT 22 (Or is yours some kind of)
+  - Single event with all values: True
+  - Send to Controller: True
+  - Interval: 10
+  - Values
+    - Temperature
+      - Name: Temperature
+      - Decimals: 2
+    - Humidity
+      - Name: Humidity
+      - Decimals: 2
+  - Formula (if need) example: %value%-1.9 or %value%+14.2 (For correction)
+- Switch input - Switch
+  - Enabled: True
+  - Name: Relay1
+  - GPIO: GPIO-13 (D7)
+  - Switch Type: Switch
+  - Switch Button Type: Normal Switch
+  - Send Boot state: True
+  - Single event with all values: True
+  - Send to Controller: True
+  - Values
+    - State
+- Switch input - Switch
+  - Enabled: True
+  - Name: Relay2
+  - GPIO: GPIO-12 (D6)
+  - Switch Type: Switch
+  - Switch Button Type: Normal Switch
+  - Send Boot state: True
+  - Single event with all values: True
+  - Send to Controller: True
+  - Values
+    - State
+- Switch input - Switch
+  - Enabled: True
+  - Name: Button1
+  - Internal PullUp: True
+  - Inversed Logic: True
+  - GPIO: GPIO-2 (D4)
+  - Switch Type: Switch
+  - Switch Button Type: Normal Switch
+  - Send Boot state: True
+  - Values
+    - State
+- Switch input - Switch
+  - Enabled: True
+  - Name: Button2
+  - Internal PullUp: False
+  - Inversed Logic: True
+  - GPIO: GPIO-0 (D3)
+  - Switch Type: Switch
+  - Switch Button Type: Normal Switch
+  - Send Boot state: True
+  - Values
+    - State
