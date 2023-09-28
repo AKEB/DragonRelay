@@ -44,7 +44,7 @@ After connecting to your Wi-Fi network, make the following settings
 
 ![IMG_3.png](IMG_3.png)
 
-2. В разделе прочии настройки указываем имя устройства
+2. В разделе прочии настройки указываем имя устройства и выключателей
 
 ![IMG_4.png](IMG_4.png)
 
