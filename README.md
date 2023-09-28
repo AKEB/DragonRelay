@@ -27,6 +27,31 @@
 16 - Red led (USB Status)
 ```
 
+## Tasmota
+
+Go to the web Installer and follow the instructions [https://tasmota.github.io/install/](https://tasmota.github.io/install/)
+
+After connecting to your Wi-Fi network, make the following settings
+
+1. Перейдите к настройкам шаблона и создайте шаблон DragonRelay на основе Generic
+
+- GPIO0 - Кнопка 2
+- GPIO2 - Кнопка 1
+- GPIO12 - Реле 2
+- GPIO13 - Реле 1
+- GPIO14 - AM2301 (Или ваш датчик DHT)
+- GPIO16 - LedLink
+
+![IMG_3.png](IMG_3.png)
+
+2. В разделе прочии настройки указываем имя устройства
+
+![IMG_4.png](IMG_4.png)
+
+3. В настройках MQTT указываем свои настройки
+
+![IMG_5.png](IMG_5.png)
+
 ## ESPEasy
 
 ### Install 1M
@@ -36,8 +61,6 @@ First install Python and esptool.py
 ```bash
 pip install esptool
 ```
-
-
 
 ```bash
 esptool.py \
