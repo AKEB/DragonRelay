@@ -14,6 +14,8 @@
 Синий провод: CTS
 ```
 
+При прошивке, когда в консоле будет написано Connecting... нужно нажать btn2 примерно на секунду и отпустить. Если не нанет прошивать, повторить нажатие.
+
 ## PINS GPIO
 
 ```text
@@ -30,6 +32,8 @@
 ## Tasmota
 
 Go to the web Installer and follow the instructions [https://tasmota.github.io/install/](https://tasmota.github.io/install/)
+
+При прошивке, когда в консоле будет написано Connecting... нужно нажать btn2 примерно на секунду и отпустить. Если не нанет прошивать, повторить нажатие.
 
 After connecting to your Wi-Fi network, make the following settings
 
